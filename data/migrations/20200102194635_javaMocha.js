@@ -16,8 +16,6 @@ exports.up = function(knex) {
                 .inTable('coffeemakers')
                 .onDelete('RESTRICT')
                 .onUpdate('CASCADE');
-
-            t.string('name', 255).notNullable();
             t.string('description', 500);
         })
         .createTable('coffees', t => {

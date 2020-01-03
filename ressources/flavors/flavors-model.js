@@ -24,9 +24,10 @@ async function insert(flavor) {
 }
 
 async function update(id, changes) {
-    return await db('flavors')
+    const flavor = await db('flavors')
         .where({id})
         .update(changes, '*');
+    return findById(id);
 }
 
 async function remove(id) {

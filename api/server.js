@@ -17,7 +17,7 @@ server.use(cors());
 
 // Route Middlewares
 server.use('/api/coffeemakers', coffeemakersRouter);
-server.use('api/flavors', flavorsRouter);
+server.use('/api/flavors', flavorsRouter);
 
 server.get('/', (req, res) => {
     res.status(200).json({Welcome_to: `Java Mocha!`});
