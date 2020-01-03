@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const db = require('./coffemakers-model');
+const validation = require('../../api/middlewares/routes-validation/coffeemakersValidation.js');
 
 router.get('/', async (req, res) => {
     try {
@@ -27,7 +28,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', validation, async (req, res) => {
     try {
         const newCoffeemaker = await db.insert(req.body);
         res.status(201).json(newCoffeemaker);
