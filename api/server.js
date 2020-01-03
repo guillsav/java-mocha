@@ -8,6 +8,7 @@ const coffeemakersRouter = require('../ressources/coffemakers/coffemakers-route.
 const flavorsRouter = require('../ressources/flavors/flavors-route.js');
 const coffeesRouter = require('../ressources/coffees/coffees-route.js');
 const accessoriesRouter = require('../ressources/accessories/accessories-route.js');
+const giftsRouter = require('../ressources/accessories/accessories-route.js');
 
 const server = express();
 
@@ -22,6 +23,7 @@ server.use('/api/coffeemakers', coffeemakersRouter);
 server.use('/api/flavors', flavorsRouter);
 server.use('/api/coffees', coffeesRouter);
 server.use('/api/accessories', accessoriesRouter);
+server.use('/api/gifts', giftsRouter);
 
 server.get('/', (req, res) => {
     res.status(200).json({Welcome_to: `Java Mocha!`});
