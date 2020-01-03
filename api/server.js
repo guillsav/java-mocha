@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 // Routers
-const coffeemakersRouter = require('../ressources/coffemakers/coffemakers-router');
+const coffeemakersRouter = require('../ressources/coffemakers/coffemakers-route');
 
 const server = express();
 
