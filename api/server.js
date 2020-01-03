@@ -4,7 +4,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 // Routers
-const coffeemakersRouter = require('../ressources/coffemakers/coffemakers-route');
+const coffeemakersRouter = require('../ressources/coffemakers/coffemakers-route.js');
+const flavorsRouter = require('../ressources/flavors/flavors-route.js');
 
 const server = express();
 
@@ -16,6 +17,7 @@ server.use(cors());
 
 // Route Middlewares
 server.use('/api/coffeemakers', coffeemakersRouter);
+server.use('api/flavors', flavorsRouter);
 
 server.get('/', (req, res) => {
     res.status(200).json({Welcome_to: `Java Mocha!`});
