@@ -12,4 +12,15 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const newCoffeemaker = await db.insert(req.body);
+        res.status(201).json(newCoffeemaker);
+    } catch ({message}) {
+        res.status(500).json({
+            errorMessage: `Could not add a new coffeemaker to the database.`
+        });
+    }
+});
+
 module.exports = router;
